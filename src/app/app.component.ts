@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my_internship_angular_app';
+  duration = '10hrs';
 }

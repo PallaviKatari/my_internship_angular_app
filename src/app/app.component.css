@@ -1,0 +1,12 @@
+h1{
+    color:blue;
+}
+p{
+    color:blueviolet;
+    background-color: beige;
+}
+img{
+    border-radius: 10px;
+    border-style: dashed;
+    border-color:brown;
+}
