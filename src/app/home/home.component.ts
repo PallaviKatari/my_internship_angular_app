@@ -11,5 +11,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //String Interpolation
+  title = 'my_internship_angular_app';
+  duration = '10hrs';
+  //Property Binding
+  image="../assets/images/img3.jpg";
+  //Event Binding
+  onclick()
+  {
+    alert("I am an event binding");
+  }
+  //Two-Way Binding
+  name="John";
 
 }

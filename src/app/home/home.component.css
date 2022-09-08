@@ -1,6 +1,12 @@
-p{
+h1{
     color:blue;
 }
-h3{
-    background-color: bisque;
+p{
+    color:blueviolet;
+    background-color: beige;
+}
+img{
+    border-radius: 10px;
+    border-style: dashed;
+    border-color:brown;
 }

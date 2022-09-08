@@ -1,2 +1,19 @@
-<p>home works!</p>
-<h3>Welcome to Home Component</h3>
+<h1>Welcome to Angular Framework {{name}}</h1>
+<!--STRING INTERPOLATION-->
+<h2>My first Angular application is {{title}}</h2>
+<h3>The Course duration is {{duration}}</h3>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, dolorem, at quod delectus rem molestiae reiciendis minus ratione commodi doloribus quasi, a pariatur temporibus saepe mollitia odit. Adipisci, officiis iusto.</p>
+<img src="/assets/images/img2.jpg" alt="CSS" height="200px" width="200px">
+<!--PROPERTY BINDING-->
+<br>
+<img [src]="image" height="100px" width="100px" alt="JS">
+<br>
+<!--EVENT BINDING-->
+<button (click)="onclick()">Event Binding</button>
+<!--TWO-WAY BINDING-->
+<!--ngModel-->
+<!--FormsModule for ngModel-->
+<br>
+<br>
+<input type="text" [(ngModel)]="name">
+Name: {{name}}
