@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardsComponent } from './cards/cards.component';
+//Angular provides a client HTTP API
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { CardsComponent } from './cards/cards.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

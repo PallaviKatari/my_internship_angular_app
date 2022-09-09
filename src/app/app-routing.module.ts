@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { CarouselComponent } from './carousel/carousel.component';
 import { CardsComponent } from './cards/cards.component';
 //Specify the routes
 const routes: Routes = [

@@ -1,0 +1,55 @@
+-> vscode editor, node.js, angular cli
+-> ng new my_angular_app
+-> cd my_angular_app
+-> code .
+-----------------------------------------
+-> execute - ng serve -o (terminal - cmd) - 4200 port
+-> stop - ctrl+c
+-----------------------------------------
+Bootstrap
+-----------
+index.html - > include the bootstrap cdn (.css and min.js file -> https://getbootstrap.com/docs/5.0/getting-started/download/)
+-------------------------------------------
+Components
+----------
+default component -> app.component.html - > index.html (app-root)
+ng g c Home -> 4 files(.html,.css,.ts,.spec.ts(testing))
+--------------------------------------------
+assets
+-------
+images
+audio
+video
+-------------------------------------------
+Data Binding
+-------------
+String Interpolation - {{}}
+Property Binding - [] - ex - <img [src]="image">
+Event Binding - () - ex - <button (click)="onclick()">Click</button>
+->Two-way Binding - [(ngModel)] - import FormsModule -> app.module.ts ->add FormsModule in the imports section
+<input type="text" [(ngModel)]="name">
+Name: {{name}}
+--------------------------------------------
+Routing - > Navigation to the corresponding component
+->app-routing.module.ts
+->We need to import the components that we need to navigate to
+const routes: Routes = [
+  {path:'',component:HomeComponent},
+  {path:'cards',component:CardsComponent}
+];
+-->navigation bar to navigate to the different routes using <a> tag
+    <a href=""> - It renders/refresh the entire page
+    <a routerLink="cards">Courses</a> - Partial rendering takes place - Single Page application
+------------------------------------------------
+Create a JSON data file
+------------------------
+1. create a folder -> data - create a file -> courses.json
+2. Give JSON data -> key-value pair
+3. import the courses.json in the cards(this task)/or component based on your requirement component
+4. import * as data from '../data/courses.json';
+---------------------------------------
+Directives
+-----------
+*ngFor -> Looping
+*ngIf -> condition
+*ngSwitch -> multiple conditions
