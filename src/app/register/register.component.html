@@ -1,0 +1,86 @@
+<!--Validators are rules which an input control has to follow. 
+    If the input doesn’t match the rule then the control is said to be invalid.
+Angular comes with the small set of prebuilt validators to match the ones we can 
+define via standard HTML 5 attributes, namely required, minlength, maxlength and 
+pattern which we can access from the Validators class in @angular/forms library.
+STEP 1:ng g c signup
+STEP 2:app.module.ts->import { ReactiveFormsModule } from '@angular/forms';
+STEP 3:signup.component.ts ->import { Validators } from '@angular/forms';-->
+<!---->
+
+<!--Bootstrap provides a different way to show an error message to the user.
+
+By using Alert component of bootstrap
+By using visual feedback for the form controls when they are invalid.-->
+<!--Validation-->
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">ONLINE REGISTRATION</h4>
+      <div class="row">
+        <div class="col-md-6">
+            <!--Property Binding-->
+          <form [formGroup]="myForm" novalidate>
+            <div class="form-group">
+              <label>Username</label>
+              <!--is-invalid class makes control border color red, as well as it will show the invalid-feedback division.
+                is-valid class makes control border color green.-->
+              <input type="text" class="form-control" placeholder="Enter your username" formControlName="username" [ngClass]="{'is-invalid': username.errors && (username.touched || username.dirty), 'is-valid':username.valid}"   >
+              <!--using visual feedback-->
+              <div class="invalid-feedback" >
+                  <!--*ngIf Directive-->
+                <strong *ngIf="username.errors?.required">Name is required</strong>
+                <strong *ngIf="username.errors?.minlength">Name length must be greater than {{username.errors?.minlength.requiredLength}} characters. {{username.errors?.minlength.requiredLength - username.errors?.minlength.actualLength}} more characters required. </strong>
+              </div>
+            </div>
+            <div class="form-group ">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Enter your password" formControlName="password" [ngClass]="{'is-invalid': password.errors && (password.touched || password.dirty), 'is-valid':password.valid}"   >
+              <div class="invalid-feedback" >
+                <!--*ngIf Directive-->
+              <strong *ngIf="password.errors?.required">Password is required</strong>
+              <strong *ngIf="password.errors?.pattern">Pattern does not match</strong>
+            </div>
+            </div>
+        
+            <div class="form-group ">
+              <label>Course Type</label>
+              <select class="form-control" formControlName="courseType" [ngClass]="{'is-invalid': courseType.errors && (courseType.touched || courseType.dirty), 'is-valid':courseType.valid}" >
+                <!--Property Binding and String Interpolation-->
+                <option *ngFor="let p of courseTypes" [value]="p">{{p}}</option>
+              </select>
+              <div class="invalid-feedback" >
+                  <strong>Select Course Type</strong>    
+              </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" (click)="onClick()">Submit</button>&nbsp;
+            <button class="btn btn-default"><a href="https://rzp.io/i/tPkP3le">PAY COURSE</a></button>
+          </form>
+        </div>
+  
+        <div class="col-md-6">
+          <label>
+            <strong>Trainee Details</strong>
+          </label>
+          <pre class="alert alert-info">{{myForm.value | json}}</pre>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+  <div class="form-group">    
+    <!--Alert component of bootstrap-->
+    <div class="alert alert-info" role="alert">
+        <!--Valid is true if the field doesn’t have validators or all its validators are passing.-->
+      <strong>Valid ? </strong>{{username.valid}} <br>
+      <strong>Invalid ? </strong>{{username.invalid}}<br>
+      <!--A form control is said to be touched if a user focused on the control and then focused on something else.
+    The difference between touched and dirty is that with touched the user doesn’t need to actually change the value of the input control.-->
+      <strong>Touched ? </strong>{{username.touched}}<br>
+      <strong>Untouched ? </strong>{{username.untouched}}<br>
+      <!--Dirty property is true if a user changes the value of form control.-->
+      <strong>Dirty ? </strong>{{username.dirty}}<br>
+      <!--Pristine property is true if a user doesn’t change the value of form control, otherwise, it is false.-->
+      <strong>Pristine ? </strong>{{username.pristine}}<br>
+    </div>
+</div>

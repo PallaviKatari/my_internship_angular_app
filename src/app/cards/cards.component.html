@@ -1,10 +1,11 @@
 <!-- Using a REST API -->
 <!-- We will be using a free service called JSONPlaceholder to retrieve JSON data and test our code. 
 We can create a function to make a GET request to retrieve users data  -->
+<!--Event binding-->
 <!-- <button (click)="readData()">GET Users</button>
 <ul>
     <li *ngFor="let num of var1">
-    {{num.username}} - {{num.address.city}}
+        {{num.username}} - {{num.address.city}} - {{num.phone}}
     </li>
 </ul> -->
 <!-- iterate through all the JSON data from the local JSON file sample.json -->
@@ -24,10 +25,17 @@ We can create a function to make a GET request to retrieve users data  -->
                     <div class="col-lg-9" style="margin-top: 30px;">
                         <div class="data">
                             {{item.name | uppercase}}
+                            <!-- TOGGLE EFFECT - SHOW AND HIDE DETAILS -->
+                            <!--Event Binding-->
+                            <span [ngClass]="getClass()" (click)="showUserDetailsToggle()"></span>
                         </div>
-                        <div class="data">
+                        <hr>
+                        <!-- TOGGLE EFFECT - SHOW AND HIDE DETAILS -->
+                        <!--Property Binding-->
+                        <!--courseDetail is false-->
+                        <div class="data" [hidden]="courseDetail">
                             <p>{{item.description | uppercase}}</p>
-                            <hr>
+                            <br>
                             <p>{{item.role|uppercase}}</p>
                         </div>
                     </div>
@@ -39,4 +47,3 @@ We can create a function to make a GET request to retrieve users data  -->
         </div> -->
     </div>
 </div>
-

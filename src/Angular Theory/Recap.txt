@@ -53,3 +53,9 @@ Directives
 *ngFor -> Looping
 *ngIf -> condition
 *ngSwitch -> multiple conditions
+----------------------------------------
+HttpClientModule ->fetch API
+Toggle Effect
+-----------------------------------
+Reactive Forms -> ReactiveFormsModule -> app.module.ts
+create a component -> ng g c register
