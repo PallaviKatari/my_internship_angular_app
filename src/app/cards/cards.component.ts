@@ -50,5 +50,7 @@ export class CardsComponent implements OnInit {
     }
     return classList;
   }
+  //property mycolor
+  mycolor:any|undefined="aqua";
   
 }

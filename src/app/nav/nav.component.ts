@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
 
   constructor() { }
+  date_today:string|undefined;
 
   ngOnInit(): void {
+    this.date_today=new Date().toDateString();
   }
 
 }

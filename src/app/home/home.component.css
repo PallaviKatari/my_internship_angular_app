@@ -6,7 +6,13 @@ p{
     background-color: beige;
 }
 img{
-    border-radius: 10px;
-    border-style: dashed;
-    border-color:brown;
+    height:100px;
+    width:200px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    border-color: black;
+    border-style: groove;
+    border-radius: 20px;
+
 }

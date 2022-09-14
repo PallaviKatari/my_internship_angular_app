@@ -1,19 +1,50 @@
-<h1>Welcome to Angular Framework {{name}}</h1>
+<!-- <h1>Welcome to Angular Framework {{name}}</h1> -->
 <!--STRING INTERPOLATION-->
-<h2>My first Angular application is {{title}}</h2>
+<!-- <h2>My first Angular application is {{title}}</h2>
 <h3>The Course duration is {{duration}}</h3>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, dolorem, at quod delectus rem molestiae reiciendis minus ratione commodi doloribus quasi, a pariatur temporibus saepe mollitia odit. Adipisci, officiis iusto.</p>
-<img src="/assets/images/img2.jpg" alt="CSS" height="200px" width="200px">
+<img src="/assets/images/img2.jpg" alt="CSS" height="200px" width="200px"> -->
 <!--PROPERTY BINDING-->
-<br>
+<!-- <br>
 <img [src]="image" height="100px" width="100px" alt="JS">
-<br>
+<br> -->
 <!--EVENT BINDING-->
-<button (click)="onclick()">Event Binding</button>
+<!-- <button (click)="onclick()">Event Binding</button> -->
 <!--TWO-WAY BINDING-->
 <!--ngModel-->
 <!--FormsModule for ngModel-->
-<br>
+<!-- <br>
 <br>
 <input type="text" [(ngModel)]="name">
-Name: {{name}}
+Name: {{name}} -->
+<!--Property Binding for ngSwitch-->
+<div *ngFor="let course of CourseDetails" [ngSwitch]="course.Status" style="margin-top: auto;">
+    <div class="row">
+        <div class="col-lg-3">
+            <img [src]="course.img">
+        </div>
+        <div class="card col-lg-6  " style="margin-top: 50px;">
+            <div class="card-body col-lg-12">
+                <div class="row" style="margin-top: 30px;">
+                    <div class="data" *ngSwitchCase="'Active'" class="text-success">
+                        {{course.CourseName}} 
+                        <br>
+                        {{course.CourseDescription}}
+                        <br>
+                        {{course.Status}}
+                    </div>
+                    <div class="data" *ngSwitchDefault class="text-danger">
+                        {{course.CourseName}} 
+                        <br>
+                        {{course.CourseDescription}}
+                        <br>
+                        {{course.Status}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <img [src]="course.img">
+        </div>
+    </div>
+</div>

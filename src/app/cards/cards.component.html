@@ -10,6 +10,8 @@ We can create a function to make a GET request to retrieve users data  -->
 </ul> -->
 <!-- iterate through all the JSON data from the local JSON file sample.json -->
 <!--for(int i=0;i<7;i++)-->
+Change the theme color : <input [(ngModel)]="mycolor" type="text" style="border-radius:10px;margin-top:30px;text-align: center;">
+<p [ngStyle]="{color:mycolor}">You have chosen: {{mycolor}}</p>
 <div *ngFor="let item of course" style="margin-top: auto;">
     <div class="row">
         <!-- <div class="col-lg-3">
@@ -23,7 +25,7 @@ We can create a function to make a GET request to retrieve users data  -->
                         <img [src]="item.img">
                     </div>
                     <div class="col-lg-9" style="margin-top: 30px;">
-                        <div class="data">
+                        <div class="data" [ngStyle]="{color:mycolor}">
                             {{item.name | uppercase}}
                             <!-- TOGGLE EFFECT - SHOW AND HIDE DETAILS -->
                             <!--Event Binding-->
@@ -33,10 +35,10 @@ We can create a function to make a GET request to retrieve users data  -->
                         <!-- TOGGLE EFFECT - SHOW AND HIDE DETAILS -->
                         <!--Property Binding-->
                         <!--courseDetail is false-->
-                        <div class="data" [hidden]="courseDetail">
+                        <div class="data" [hidden]="courseDetail" [ngStyle]="{color:mycolor}">
                             <p>{{item.description | uppercase}}</p>
                             <br>
-                            <p>{{item.role|uppercase}}</p>
+                            <p>Course Fee: {{item.fees | currency:'INR'}}</p>
                         </div>
                     </div>
                 </div>
