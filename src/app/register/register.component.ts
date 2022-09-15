@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 //to validate the input in the form element
 import { Validators } from '@angular/forms';
+import * as data from "../data/courses.json";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -33,4 +34,6 @@ export class RegisterComponent implements OnInit {
       'courseType': this.courseType //Java
     });
   }
+
+  courseimage:any=(data as any).default;
 }

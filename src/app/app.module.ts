@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 //ReactiveFormsModule for designing and validating the form elements
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdvertisementComponent } from './advertisement/advertisement.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     CarouselComponent,
     CardsComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdvertisementComponent
   ],
   imports: [
     BrowserModule,

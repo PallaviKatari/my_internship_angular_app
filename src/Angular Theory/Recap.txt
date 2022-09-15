@@ -67,3 +67,8 @@ PIPES - TRANFORMATION OF THE CONTENTS
 date functions
 math functions
 string functions
+
+-----------------------
+PAYMENT INTEGRATION
+FIREBASE DEPLOYMENT
+IFRAME - YOUTUBE VIDEOS

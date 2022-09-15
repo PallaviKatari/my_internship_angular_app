@@ -1,0 +1,15 @@
+img{
+    height:100px;
+    width:100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    border-color: black;
+    border-style: groove;
+    border-radius: 20px;
+}
+h2{
+    text-align: center;
+    text-shadow: 2px 3px 3px black;
+    color:blue
+}
